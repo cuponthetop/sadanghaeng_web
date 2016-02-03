@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<head>
+	<% include ../partials/head %>
+</head>
+
+<body>
+	<div class="header">
+		<% include ../partials/header %>
+	</div>
+
+	<div class="login">
+		<h3>log-in to garim</h3>
+		<form role="form">
+			<div class="form-group">
+				<input type="email" id="email" placeholder="이메일">
+			</div>
+
+			<div class="form-group">
+				<input type="password" id="pw" placeholder="암호 입력해주세요">
+			</div>
+
+			<div class="login-options">
+				<label id="save-pw">
+					<input type="checkbox"> ID 저장 | 
+				</label>
+				<a href="#" class="find-pw">비밀번호 찾기</a>
+			</div>
+			
+			<button type="submit" class="btn btn-info">로그인</button>
+		</form>
+	</div>
+
+	<div class="footer">
+		<% include ../partials/footer %>
+	</div>
+</body>
