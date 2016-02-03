@@ -28,3 +28,6 @@ node_modules
 
 # idea
 .idea
+
+# bower
+public/lib/bower_components
