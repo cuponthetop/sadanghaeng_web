@@ -16,33 +16,78 @@
 
     <!-- main.css -->
     <link href="/css/main.css" rel="stylesheet">
+
+    <script src="//ajax.googleapis.com/ajax/libs/webfont/1.4.10/webfont.js"></script>
+    <script type="text/javascript">
+        WebFont.load({
+
+            // For google fonts
+            google: {
+                families: ['Droid Sans', 'Droid Serif']
+            }
+            // For early access or custom font
+            custom: {
+                families: ['Nanum Gothic'],
+                urls: ['http://fonts.googleapis.com/earlyaccess/nanumgothic.css']
+            }
+
+        });
+    </script>
 </head>
 
 <body>
 
-<nav class="navbar navbar-fixed-top navbar-dark bg-inverse">
-    <a class="navbar-brand" href="http://v4-alpha.getbootstrap.com/examples/starter-template/#">Project name</a>
-    <ul class="nav navbar-nav">
-        <li class="nav-item active">
-            <a class="nav-link" href="http://v4-alpha.getbootstrap.com/examples/starter-template/#">Home <span class="sr-only">(current)</span></a>
+<nav class="navbar navbar-fixed-top main-navbar">
+    <div class="row container-fluid">
+        <div class="col-xs-2 col-md-2">
+            <img class="nav-left-item nav-image" src="/img/ic_user.png">
+        </div>
+        <div class="nav-center-item col-xs-8 col-md-8">
+            <div class="center-block">
+                <p class="nav-title-text text-center">한양대 가림판</p>
+            </div>
+        </div>
+        <div class="col-xs-2 col-md-2">
+            <img class="nav-right-item nav-image" src="/img/ic_search.png">
+        </div>
+    </div>
+</nav><!-- /.navbar -->
+
+<div class="post-container container-fluid">
+    <button class="full-width-btn write-post-btn btn">글 쓰기</button>
+    <div class="sort-btn-container">
+        <div class="sort-new-btn active">NEW</div>
+        <div class="sort-best-btn">BEST</div>
+    </div>
+    <ul class="post-list-container">
+        <li class="post-item">
+            <div class="post-title">제목입니다.</div>
+            <div class="post-info">
+                <span class="post-author">글쓴이</span>
+                <span class="post-date">16.01.27 16:00</span>
+                <span class="post-label post-view-label">View</span>
+                <span class="post-value post-view">26</span>
+                <span class="post-label post-like-label active"></span>
+                <span class="post-value post-like">100</span>
+                <span class="post-label post-dislike-label"></span>
+                <span class="post-value post-dislike">3</span>
+            </div>
         </li>
-        <li class="nav-item">
-            <a class="nav-link" href="http://v4-alpha.getbootstrap.com/examples/starter-template/#">About</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="http://v4-alpha.getbootstrap.com/examples/starter-template/#">Contact</a>
+        <li class="post-item">
+            <div class="post-title">제목입니다.</div>
+            <div class="post-info">
+                <span class="post-author">글쓴이</span>
+                <span class="post-date">16.01.27 16:00</span>
+                <span class="post-label post-view-label">View</span>
+                <span class="post-value post-view">26</span>
+                <span class="post-label post-like-label active"></span>
+                <span class="post-value post-like">100</span>
+                <span class="post-label post-dislike-label"></span>
+                <span class="post-value post-dislike">3</span>
+            </div>
         </li>
     </ul>
-</nav>
-
-<div class="container">
-
-    <div class="starter-template">
-        <h1>Bootstrap starter template</h1>
-        <p class="lead">Use this document as a way to quickly start any new project.<br> All you get is this text and a mostly barebones HTML document.</p>
-    </div>
-
-</div><!-- /.container -->
+</div><!-- /.post-container -->
 
 
 <!-- Bootstrap core JavaScript
