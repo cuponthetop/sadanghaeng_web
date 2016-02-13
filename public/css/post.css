@@ -1,0 +1,20 @@
+body {
+    padding-top: 50px;
+    font-family: "Nanum Gothic", sans-serif;
+}
+
+/* post-navbar start */
+.post-navbar {
+    padding-top: 3px;
+    padding-left: 8px;
+}
+
+.nav-left-item {
+    float: left;
+}
+
+.nav-image {
+    width: 44px;
+    height: 44px;
+}
+/* post-navbar end */
