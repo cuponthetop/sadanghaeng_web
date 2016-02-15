@@ -36,20 +36,54 @@
 </head>
 
 <body>
-<nav class="navbar navbar-fixed-top post-navbar">
-    <div class="post-nav-con">
-        <img class="nav-left-item nav-image" src="/img/ic_left.png">
-    </div>
-</nav><!-- /.navbar -->
+    <!-- .navbar -->
+    <nav class="navbar navbar-fixed-top post-navbar">
+        <div class="post-nav-con">
+            <img class="nav-left-item nav-image" src="/img/ic_left.png">
+        </div>
+    </nav><!-- /.navbar -->
 
-<!-- Bootstrap core JavaScript
-================================================== -->
-<!-- Placed at the end of the document so the pages load faster -->
-<script src="/lib/bower_components/jquery/dist/jquery.min.js"></script>
-<script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
-<script src="/lib/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-<script src="/lib/ie10-viewport-bug-workaround.js"></script>
+    <!-- .post-container -->
+    <div class="post-container container-fluid">
+        <div class="title-container">
+            <p>타이틀입니다.</p>
+        </div>
+
+        <div class="info-container">
+            <span class="post-author">글쓴이</span>
+            <span class="post-date">16.01.27 16:00</span>
+            <span class="post-label post-view-label">View</span>
+            <span class="post-value post-view">26</span>
+        </div>
+
+        <div class="content-container">
+            <textarea id="post_content">내용이빈다.</textarea>
+        </div>
+    </div><!-- /.post-container -->
+
+    <div class="comment-container container-fluid">
+
+    </div>
+
+    <div class="comment-write-fixed-bottom container-fluid">
+        <div class="row">
+            <div class="col-xs-10 col-md-10 comment-input">
+                <input type="text" id="comment_write_input" placeholder="댓글을 입력하세요"/>
+            </div>
+            <div class="col-xs-2 col-md-2 padding-zero">
+                <p id="comment_write_btn" class="text-center">전송</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="/lib/bower_components/jquery/dist/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+    <script src="/lib/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="/lib/ie10-viewport-bug-workaround.js"></script>
 </body>
 
 </html>
