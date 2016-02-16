@@ -11,6 +11,7 @@ body {
 .post-navbar {
     padding-top: 3px;
     padding-left: 8px;
+    background-color: #ffffff;
 }
 
 .nav-left-item {
@@ -183,7 +184,6 @@ body {
     background-color: #F9322E;
     border: none;
     color: #ffffff;
-    font-size: 14px;
     padding-left: 8px;
 }
 
