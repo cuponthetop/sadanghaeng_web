@@ -1,36 +1,24 @@
 <!DOCTYPE html>
 <head>
 	<% include ../partials/head %>
+	<link rel="stylesheet" href="/css/login.css"/>
 </head>
 
 <body>
-	<div class="header">
-		<% include ../partials/header %>
-	</div>
-
 	<div class="login">
-		<h3>log-in to garim</h3>
-		<form role="form">
-			<div class="form-group">
-				<input type="email" id="email" placeholder="이메일">
+			<div>
+				<img class="logo-img" src="/img/garim_small.png" alt=""/>
 			</div>
-
-			<div class="form-group">
-				<input type="password" id="pw" placeholder="암호 입력해주세요">
+			<div class="login-text">316개 학교<br>155,566,222개 글<br></div>
+			우리 학교 이야기가 궁금하세요?<br>
+			지금바로 시작하세요!
+			<div class="login-form">
+				<form action="">
+					<input type="email" class="email" placeholder="E-mail"/><br>
+					<input type="password" class="pwd" placeholder="Password"/>
+				</form>
+				<div class="login-btn">Log in</div>
+				<div class="join-btn">회원가입</div>
 			</div>
-
-			<div class="login-options">
-				<label id="save-pw">
-					<input type="checkbox"> ID 저장 | 
-				</label>
-				<a href="#" class="find-pw">비밀번호 찾기</a>
-			</div>
-			
-			<button type="submit" class="btn btn-info">로그인</button>
-		</form>
-	</div>
-
-	<div class="footer">
-		<% include ../partials/footer %>
-	</div>
+		</div>
 </body>
