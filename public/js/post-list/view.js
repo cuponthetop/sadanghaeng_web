@@ -27,7 +27,7 @@
   View.prototype.render = function (viewCmd, parameter) {
     var self = this;
     var viewCommands = {
-      redrawPostList: function() {
+      redraw: function() {
         self._clearPostList();
         self._drawPostList(parameter);
       }

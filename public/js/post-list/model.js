@@ -10,6 +10,40 @@
 
   }
 
+  Model.prototype.getPostList = function(parameter, callback) {
+    //TODO: 서버에서 데이터 가져오는 부분 만들어야함!
+    var postList = [
+      {
+        pid: 'abc',
+        title: '테스트',
+        author: '글쓴이',
+        written: '3시간전',
+        viewCount: 10,
+        likeCount: 1,
+        dislikeCount: 3
+      },
+      {
+        pid: 'abc',
+        title: '테스트',
+        author: '글쓴이',
+        written: '3시간전',
+        viewCount: 10,
+        likeCount: 1,
+        dislikeCount: 3
+      },
+      {
+        pid: 'abc',
+        title: '테스트',
+        author: '글쓴이',
+        written: '3시간전',
+        viewCount: 10,
+        likeCount: 1,
+        dislikeCount: 3
+      }
+    ];
+    callback(postList);
+  };
+
   // Export to window
   window.app = window.app || {};
   window.app.Model = Model;

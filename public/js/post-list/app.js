@@ -15,8 +15,12 @@
 
   var postList = new PostList();
 
-  $(document).ready(function() {
+  function setView() {
+    postList.controller.setView();
+  }
 
+  $(document).ready(function() {
+    setView();
   });
 
 })(window);

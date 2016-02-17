@@ -33,4 +33,3 @@ node_modules
 public/lib/bower_components
 
 examples/*
-examples/vanillajs/*
