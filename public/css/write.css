@@ -1,6 +1,6 @@
 body {
     padding-top: 50px;
-    font-family: "Nanum Gothic", sans-serif;
+    font-family: sans-serif, "Nanum Gothic";
 }
 
 /* navbar start */
@@ -59,7 +59,7 @@ body {
 }
 
 .post-container .content-container {
-    padding-top: 5px;
+    padding-top: 10px;
 }
 
 #post_content {
