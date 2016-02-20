@@ -31,8 +31,8 @@
     var self = this;
     var viewCommands = {
       redraw: function() {
-        self._drawPostData(parameter.post);
-        self._drawPostInfoData(parameter.post);
+        self._drawPostData(parameter);
+        self._drawPostInfoData(parameter);
         self._drawCommentData(parameter.comments);
       }
     };
