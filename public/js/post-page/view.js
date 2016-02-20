@@ -14,20 +14,26 @@
     this.template = template;
   }
 
-  View.prototype._clearPostList = function(parameter) {
-    $('#post_list_container').empty();
+  View.prototype._drawPostData = function(parameter) {
+    $('#post_container').append(this.template.showPost(parameter))
   };
 
-  View.prototype._drawPostList = function(parameter) {
-    $('#post_list_container').append(this.template.show(parameter))
+  View.prototype._drawPostInfoData = function(parameter) {
+    $('#post_info_container').append(this.template.showPostInfo(parameter))
+  };
+
+
+  View.prototype._drawCommentData = function(parameter) {
+    $('#comment_list_container').append(this.template.showComment(parameter))
   };
 
   View.prototype.render = function (viewCmd, parameter) {
     var self = this;
     var viewCommands = {
       redraw: function() {
-        self._clearPostList();
-        self._drawPostList(parameter);
+        self._drawPostData(parameter.post);
+        self._drawPostInfoData(parameter.post);
+        self._drawCommentData(parameter.comments);
       }
     };
 
