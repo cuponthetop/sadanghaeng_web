@@ -1,0 +1,129 @@
+(function (window) {
+  var requestMethod = {};
+  var isProcessing = false;
+
+  return {
+    /**
+     * HttpUtil.get
+     *
+     * @param url
+     * @param params: data
+     * @param callback: function(err, result)
+     */
+    get: function (url, params, callback) {
+      if(arguments.length < 3) {
+        callback = params;
+        params = null;
+      }
+      if (requestMethod.requestUrl == url) {
+        requestMethod.abort();
+      }
+      requestMethod = $.ajax({
+        type: 'GET',
+        url: url,
+        data: params,
+        error: function errorHandler(jqXHR, textStatus, errorThrown) {
+          callback("status : " + jqXHR.status + " msg : " + textStatus );
+        },
+        success: function successHandler(data, textStatus, jqXHR) {
+          callback(null, data);
+          requestMethod = {};
+        }
+      });
+      requestMethod.url = url;
+    },
+    /**
+     * HttpUtil.post
+     *
+     * @param url
+     * @param params: data
+     * @param callback: function(err, result)
+     */
+    post: function (url, params, callback) {
+      if(arguments.length <3) {
+        callback = params;
+        params = {};
+      }
+      if (isProcessing) return;
+      isProcessing = true;
+      $.ajax({
+        url: url,
+        type: 'post',
+        data: JSON.stringify(params),
+        contentType: 'application/json;charset=UTF-8',
+        dataType: 'json',
+        error: function errorHandler(jqXHR, textStatus, errorThrown) {
+          callback("status : " + jqXHR.status + " msg : " + textStatus );
+        },
+        success: function successHandler(data, status, xhr) {
+          callback(null, data);
+        },
+        complete: function () {
+          isProcessing = false;
+        }
+      })
+    },
+    /**
+     * HttpUtil.put
+     *
+     * @param url
+     * @param params: data
+     * @param callback: function(err, result)
+     */
+    put: function (url, params, callback) {
+      if(arguments.length <3) {
+        callback = params;
+        params = {};
+      }
+      if (isProcessing) return;
+      isProcessing = true;
+      $.ajax({
+        type: 'PUT',
+        url: url,
+        data: JSON.stringify(params),
+        contentType: 'application/json;charset=UTF-8',
+        dataType: 'json',
+        error: function errorHandler(jqXHR, textStatus, errorThrown) {
+          callback("status : " + jqXHR.status + " msg : " + textStatus );
+        },
+        success: function successHandler(data, status, xhr) {
+          callback(null, data);
+        },
+        complete: function () {
+          isProcessing = false;
+        }
+      })
+    },
+    /**
+     * HttpUtil.delete
+     *
+     * @param url
+     * @param params: data
+     * @param callback: function(err, result)
+     */
+    "delete": function (url, params, callback) {
+      if(arguments.length < 3) {
+        callback = params;
+        params = {};
+      }
+      if (isProcessing) return;
+      isProcessing = true;
+      $.ajax({
+        type: 'DELETE',
+        url: url,
+        data: JSON.stringify(params),
+        contentType: 'application/json;charset=UTF-8',
+        dataType: 'json',
+        error: function errorHandler(jqXHR, textStatus, errorThrown) {
+          callback("status : " + jqXHR.status + " msg : " + textStatus );
+        },
+        success: function successHandler(data, status, xhr) {
+          callback(null, data);
+        },
+        complete: function () {
+          isProcessing = false;
+        }
+      })
+    }
+  };
+})(window);
