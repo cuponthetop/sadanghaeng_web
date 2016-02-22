@@ -21,7 +21,7 @@
       status = false;
     }
     if (pwd !== pwd2) {
-      alert("입력된 패스워드가 서로 다릅니다. 패스워드를 확인해주세요.")
+      alert("입력된 패스워드가 서로 다릅니다. 패스워드를 확인해주세요.");
       status = false;
     }
     return status;
