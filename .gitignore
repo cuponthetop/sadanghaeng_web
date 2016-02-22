@@ -31,3 +31,5 @@ node_modules
 
 # bower
 public/lib/bower_components
+
+examples/*

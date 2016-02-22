@@ -1,33 +1,33 @@
 <!DOCTYPE html>
 <head>
 	<% include ../partials/head %>
+	<link rel="stylesheet" href="/css/signup.css"/>
 </head>
 
 <body>
-	<div class="header">
-		<% include ../partials/header %>
-	</div>
-
 	<div class="signup">
-		<h3>Sign-up for garim</h3>
-		<form role="form">
-			<div class="form-group">
-				<input type="text" id="name" placeholder="이름">
-			</div>
-
-			<div class="form-group">
-				<input type="email" id="email" placeholder="이메일">
-			</div>
-
-			<div class="form-group">
-				<input type="password" id="pw" placeholder="암호 입력해주세요">
-			</div>
-
-			<button type="submit" class="btn btn-info">가입</button>
-		</form>
+		<div style="height:30%;"></div>
+		<div class="signup-text">소속 학교의 본인 이메일 주소를<br>입력해주세요.</div>
+		<div class="signup-form">
+			<form action="">
+				<input id="user_email" type="email" class="email" placeholder="E-mail"/><br>
+				<input id="user_pwd" type="password" class="pwd" placeholder="Password"/>
+				<input id="user_pwd2" type="password" class="pwd" placeholder="Password Confirm"/>
+			</form>
+			<div id="signup_btn" class="signup-btn">가입하기</div>
+		</div>
 	</div>
 
-	<div class="footer">
-		<% include ../partials/footer %>
-	</div>
+	<!-- Bootstrap core JavaScript
+    ================================================== -->
+	<!-- Placed at the end of the document so the pages load faster -->
+	<script src="/lib/bower_components/jquery/dist/jquery.min.js"></script>
+	<script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+	<script src="/lib/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+	<script src="/js/common.js"></script>
+	<script src="/js/util/HttpUtil.js"></script>
+	<script src="/js/signup-page/app.js"></script>
+	<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+	<script src="/lib/ie10-viewport-bug-workaround.js"></script>
 </body>
+</html>

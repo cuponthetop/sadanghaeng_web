@@ -15,7 +15,7 @@
     <link href="/lib/bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- main.css -->
-    <link href="/css/write.css" rel="stylesheet">
+    <link href="/css/search.css" rel="stylesheet">
 
     <script src="//ajax.googleapis.com/ajax/libs/webfont/1.4.10/webfont.js"></script>
     <script type="text/javascript">
@@ -36,31 +36,36 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-fixed-top write-navbar">
-        <div class="write-nav-con">
+<!-- .navbar -->
+<nav class="navbar navbar-fixed-top post-navbar">
+    <div class="row">
+        <div class="col-xs-2 col-md-2">
             <img class="nav-left-item nav-image" src="/img/ic_left.png">
-            <span class="nav-right-item post-btn">Post</span>
         </div>
-    </nav><!-- /.navbar -->
-
-    <div class="post-container container-fluid">
-        <div class="title-container">
-            <label>Title: </label>
-            <input id="post_title" placeholder="제목을 입력해주세요"/>
+        <div class="nav-search-input col-xs-8 col-md-8">
+            <input id="search_input" type="text" placeholder="찾고 싶은걸 여기에 적으세요">
         </div>
-        <div class="content-container">
-            <textarea id="post_content" placeholder="내용을 입력해주세요"></textarea>
+        <div class="nav-search-btn col-xs-2 col-md-2">
+            <button id="search_btn" class="search-btn btn">검색</button>
         </div>
     </div>
 
-    <!-- Bootstrap core JavaScript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <script src="/lib/bower_components/jquery/dist/jquery.min.js"></script>
-    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
-    <script src="/lib/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <script src="/lib/ie10-viewport-bug-workaround.js"></script>
+
+</nav><!-- /.navbar -->
+
+
+
+<!-- Bootstrap core JavaScript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="/lib/bower_components/jquery/dist/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+<script src="/lib/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="/js/common.js"></script>
+<script src="/js/util/HttpUtil.js"></script>
+
+<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+<script src="/lib/ie10-viewport-bug-workaround.js"></script>
 </body>
 
 </html>
