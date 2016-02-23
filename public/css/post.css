@@ -134,7 +134,7 @@ body {
 }
 
 .comment-list-container .comment-item {
-    min-height: 80px;
+    min-height: 60px;
     border-bottom: solid 1px #000000;
 }
 
@@ -156,8 +156,6 @@ body {
 }
 
 
-
-
 /* comment-container end */
 
 /* comment-write-fixed-bottom start */
@@ -174,6 +172,7 @@ body {
 
 .comment-write-fixed-bottom .comment-input {
     padding-right: 0px;
+    color: #ffffff;
 }
 
 #comment_write_input {
@@ -189,7 +188,7 @@ body {
 
 #comment_write_btn {
     line-height: 30px;
-    font-size: 14px;
+    font-size: 16px;
     color: #ffffff;
 }
 /* comment-write-fixed-bottom end */

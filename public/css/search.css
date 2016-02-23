@@ -31,6 +31,8 @@ body {
     margin-top: 5px;
     line-height: 35px;
     vertical-align: middle;
+    border: none;
+    border-radius: 5px;
 }
 
 #search_btn {
@@ -40,6 +42,8 @@ body {
     padding-left: 5px;
     padding-right: 5px;
     margin-top: 5px;
+    background-color: #fd4037;
+    color: #ffffff;
 }
 
 /* nav end */
