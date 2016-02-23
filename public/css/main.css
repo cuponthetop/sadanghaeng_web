@@ -82,8 +82,8 @@ body {
 .write-post-btn {
     height: 47px;
     font-size: 14px;
-    background-color: rgb(178, 224, 218);
-    color: rgb(252, 86, 80);
+    background-color: #fd4037;
+    color: #ffffff;
 }
 
 /* post-container start */
@@ -110,7 +110,7 @@ body {
     border-bottom-left-radius: 0.3em;
     text-align: center;
     text-decoration: none;
-    color: rgb(252, 86, 80);
+    color: #fd4037;
     display: inline-block;
 }
 
@@ -126,13 +126,13 @@ body {
     border-bottom-right-radius: 0.3em;
     text-align: center;
     text-decoration: none;
-    color: rgb(252, 86, 80);
+    color: #fd4037;
     display: inline-block;
 }
 
 .sort-btn-container .active {
-    background-color: rgb(252, 86, 80);
-    color: rgb(178, 224, 218);
+    background-color: #fd4037;
+    color: #ffffff;
 }
 
 .post-list-container {
