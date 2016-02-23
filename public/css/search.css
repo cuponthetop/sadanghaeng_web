@@ -33,6 +33,7 @@ body {
     vertical-align: middle;
     border: none;
     border-radius: 5px;
+    padding: 8px;
 }
 
 #search_btn {
