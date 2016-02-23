@@ -9,11 +9,8 @@
 
 <body>
     <!-- .navbar -->
-    <nav class="navbar navbar-fixed-top post-navbar">
-        <div class="post-nav-con">
-            <img class="nav-left-item nav-image" src="/img/ic_left.png">
-        </div>
-    </nav><!-- /.navbar -->
+    <% var titleText = "한양대 가림판"; %>
+    <% include ../partials/common-nav %>
 
     <!-- .post-container -->
     <div id="post_container" class="post-container container-fluid" data-id="<%= pid %>">
@@ -40,21 +37,13 @@
         </div>
     </div>
 
-    <!-- Bootstrap core JavaScript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <script src="/lib/bower_components/jquery/dist/jquery.min.js"></script>
-    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
-    <script src="/lib/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-    <script src="/js/common.js"></script>
-    <script src="/js/util/HttpUtil.js"></script>
+    <% include ../partials/footer %>
+
     <script src="/js/post-page/template.js"></script>
     <script src="/js/post-page/model.js"></script>
     <script src="/js/post-page/view.js"></script>
     <script src="/js/post-page/controller.js"></script>
     <script src="/js/post-page/app.js"></script>
-    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <script src="/lib/ie10-viewport-bug-workaround.js"></script>
 </body>
 
 </html>
