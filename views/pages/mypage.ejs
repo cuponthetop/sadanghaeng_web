@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<!-- saved from url=(0059)http://v4-alpha.getbootstrap.com/examples/starter-template/ -->
+<html>
+<head>
+    <% include ../partials/head %>
+    <!-- post.css -->
+    <link href="/css/post.css" rel="stylesheet">
+</head>
+
+<body>
+    <!-- .navbar -->
+    <% var titleText = "My GARIM"; %>
+    <% include ../partials/common-nav %>
+
+    <div id="nickname_container" class="nickname-container container-fluid" data-id="<%= uid %>">
+        <div class="row">
+            <div class="col-xs-2 col-md-2">
+                <p class="text-center">닉네임</p>
+            </div>
+            <div class="col-xs-8 col-md-8 comment-input">
+                <p id="user_nickname">유저닉네임</p>
+                <input type="text" id="nickname_input" class="hide" value="닉네임"/>
+            </div>
+            <div class="col-xs-2 col-md-2">
+                <p lass="text-center">수정</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="my_content_container" class="my-content-container container-fluid" data-id="<%= uid %>">
+        <a href="/mypost/<%= uid %>">
+            <div>내가 쓴 글</div>
+        </a>
+        <a href="/mycomment/<%= uid %>">
+            <div>내가 쓴 댓글</div>
+        </a>
+    </div>
+
+    <% include ../partials/footer %>
+    <script src="/js/mypage-page/app.js"></script>
+
+</body>
+
+</html>

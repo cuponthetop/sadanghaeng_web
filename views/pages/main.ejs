@@ -1,38 +1,10 @@
 <!DOCTYPE html>
 <!-- saved from url=(0059)http://v4-alpha.getbootstrap.com/examples/starter-template/ -->
-<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <meta name="description" content="Garim mobile web page">
-    <meta name="author" content="Sadanghaeng">
-    <link rel="icon" href="http://v4-alpha.getbootstrap.com/favicon.ico">
-
-    <title>Garim</title>
-
-    <!-- Bootstrap core CSS -->
-    <link href="/lib/bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
-
+<html>
+<head>
+    <% include ../partials/head %>
     <!-- main.css -->
     <link href="/css/main.css" rel="stylesheet">
-
-    <script src="//ajax.googleapis.com/ajax/libs/webfont/1.4.10/webfont.js"></script>
-    <script type="text/javascript">
-        WebFont.load({
-
-            // For google fonts
-            google: {
-                families: ['Droid Serif']
-            },
-            // For early access or custom font
-            custom: {
-                families: ['Nanum Gothic'],
-                urls: ['http://fonts.googleapis.com/earlyaccess/nanumgothic.css']
-            }
-
-        });
-    </script>
 </head>
 
 <body>
@@ -169,21 +141,12 @@
         </div>
     </footer>
 
-    <!-- Bootstrap core JavaScript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <script src="/lib/bower_components/jquery/dist/jquery.min.js"></script>
-    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
-    <script src="/lib/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-    <script src="/js/common.js"></script>
-    <script src="/js/util/HttpUtil.js"></script>
+    <% include ../partials/footer %>
     <script src="/js/post-list/template.js"></script>
     <script src="/js/post-list/model.js"></script>
     <script src="/js/post-list/view.js"></script>
     <script src="/js/post-list/controller.js"></script>
     <script src="/js/post-list/app.js"></script>
-    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <script src="/lib/ie10-viewport-bug-workaround.js"></script>
 </body>
 
 </html>
