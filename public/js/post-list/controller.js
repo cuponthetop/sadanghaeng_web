@@ -15,6 +15,11 @@
     var self = this;
     self.model = model;
     self.view = view;
+
+    self.view.bind('movePage', function(pageNumVal) {
+      pageNum = pageNumVal;
+      self._updatePostList();
+    });
   }
 
   Controller.prototype.setView = function() {

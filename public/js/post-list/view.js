@@ -14,7 +14,7 @@
     this.template = template;
   }
 
-  View.prototype._clearPostList = function(parameter) {
+  View.prototype._clearPostList = function() {
     $('#post_list_container').empty();
   };
 
@@ -32,6 +32,17 @@
     };
 
     viewCommands[viewCmd]();
+  };
+
+  View.prototype.bind = function (event, handler) {
+    var self = this;
+    if (event === 'movePage') {
+      $('#pagination_container > .pagination-number').unbind('click').click(function() {
+        $('#pagination_container > .pagination-number').removeClass('active');
+        $(this).addClass('active');
+        handler(parseInt($(this).data('value')));
+      });
+    }
   };
 
   // Export to window

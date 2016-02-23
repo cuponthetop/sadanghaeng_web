@@ -53,6 +53,11 @@ body {
     font-size: 14px;
     margin-left: 3px;
     margin-right: 3px;
+    color: #000000;
+}
+
+.pagination-container .pagination-number.active {
+    color: #fd4037;
 }
 
 .pagination-container .pagination-left > img {
