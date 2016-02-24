@@ -33,7 +33,7 @@
         email: $('#user_email').val(),
         password: $('#user_pwd').val()
       };
-      HttpUtil.post('http://192.168.43.63:3001/api/v1/users/register',user,function(err, result) {
+      HttpUtil.post('http://localhost:5001/api/v1/users/register',user,function(err, result) {
         if (err) {
           return;
         }
