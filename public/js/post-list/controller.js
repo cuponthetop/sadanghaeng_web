@@ -35,6 +35,9 @@
 
   Controller.prototype._updatePostList = function () {
     var self = this;
+    self.model.getUnivInfo({univid: $('univ_title_container').data('id')}, function(data) {
+      self.view.render('redrawTitle', data);
+    });
     self.model.getPostList({ filter: sortFilter, page: pageNum, perPage: PER_PAGE }, function(data) {
       self.view.render('redraw', data);
     });

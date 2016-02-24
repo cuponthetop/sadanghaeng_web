@@ -14,6 +14,10 @@
     this.template = template;
   }
 
+  View.prototype._drawUnivTitle = function(parameter) {
+    $('#univ_title').text(parameter);
+  };
+
   View.prototype._clearPostList = function() {
     $('#post_list_container').empty();
   };
@@ -25,6 +29,9 @@
   View.prototype.render = function (viewCmd, parameter) {
     var self = this;
     var viewCommands = {
+      redrawTitle: function() {
+        self._drawUnivTitle(parameter);
+      },
       redraw: function() {
         self._clearPostList();
         self._drawPostList(parameter);

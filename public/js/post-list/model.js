@@ -10,6 +10,12 @@
 
   }
 
+  Model.prototype.getUnivInfo = function(parameter, callback) {
+    //TODO: 서버 연동
+
+    callback("한양대" + " 가림판");
+  };
+
   Model.prototype.getPostList = function(parameter, callback) {
     //TODO: 서버에서 데이터 가져오는 부분 만들어야함!
     var postList = [
