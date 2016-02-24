@@ -50,7 +50,7 @@
     isProcessing = true;
     $.ajax({
       url: url,
-      type: 'post',
+      type: 'POST',
       data: JSON.stringify(params),
       contentType: 'application/json;charset=UTF-8',
       dataType: 'json',
