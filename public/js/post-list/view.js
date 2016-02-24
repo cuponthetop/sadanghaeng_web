@@ -36,6 +36,14 @@
 
   View.prototype.bind = function (event, handler) {
     var self = this;
+    if (event === 'changeTab') {
+      $('.sort-btn-container .sort-btn').unbind('click').click(function() {
+        $('.sort-btn-container .sort-btn').removeClass('active');
+        $(this).addClass('active');
+        handler($(this).data('value'));
+      });
+    }
+
     if (event === 'movePage') {
       $('#pagination_container > .pagination-number').unbind('click').click(function() {
         $('#pagination_container > .pagination-number').removeClass('active');

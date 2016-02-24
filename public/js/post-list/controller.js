@@ -3,6 +3,7 @@
 
   var PER_PAGE = 7;
   var pageNum = 1;
+  var sortFilter = 'new';
 
   /**
    * Takes a model and view and acts as the controller between them
@@ -15,6 +16,11 @@
     var self = this;
     self.model = model;
     self.view = view;
+
+    self.view.bind('changeTab', function(tabValue) {
+      sortFilter = tabValue;
+      self._updatePostList();
+    });
 
     self.view.bind('movePage', function(pageNumVal) {
       pageNum = pageNumVal;
@@ -29,7 +35,7 @@
 
   Controller.prototype._updatePostList = function () {
     var self = this;
-    self.model.getPostList({ page: pageNum, perPage: PER_PAGE }, function(data) {
+    self.model.getPostList({ filter: sortFilter, page: pageNum, perPage: PER_PAGE }, function(data) {
       self.view.render('redraw', data);
     });
   };
