@@ -12,6 +12,9 @@
 
   Model.prototype.getUnivInfo = function(parameter, callback) {
     HttpUtil.get(HOST_URL + '/api/v1/universities/'+parameter.univid, function (err, result) {
+      if (err) {
+        return callback("가림판");
+      }
       if (result.status === 0) {
         callback(result.value.name + " 가림판");
       } else {
@@ -22,6 +25,9 @@
 
   Model.prototype.getPostList = function(parameter, callback) {
     HttpUtil.get(HOST_URL + '/api/v1/universities/'+parameter.univid+'/posts', parameter, function (err, result) {
+      if (err) {
+        return callback([]);
+      }
       if (result.status === 0) {
         callback(result.value);
       } else {

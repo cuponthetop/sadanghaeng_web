@@ -30,7 +30,12 @@
 
   Controller.prototype.setView = function() {
     var self = this;
+    self._updateUnivTitle();
     self._updatePostList();
+  };
+
+  Controller.prototype._updateUnivTitle = function () {
+    var self = this;
     self.model.getUnivInfo({ univid: $('#univ_title_container').data('id') }, function(data) {
       self.view.render('redrawTitle', data);
     });
