@@ -11,8 +11,8 @@
    * @param params: data
    * @param callback: function(err, result)
    */
-  HttpUtil.get = function(url, params, callback) {
-    if(arguments.length < 3) {
+  HttpUtil.get = function (url, params, callback) {
+    if (arguments.length < 3) {
       callback = params;
       params = null;
     }
@@ -24,12 +24,16 @@
       url: url,
       data: params,
       error: function errorHandler(jqXHR, textStatus, errorThrown) {
-        callback("status : " + jqXHR.status + " msg : " + textStatus );
+        callback("status : " + jqXHR.status + " msg : " + textStatus);
       },
       success: function successHandler(data, textStatus, jqXHR) {
         callback(null, data);
         requestMethod = {};
+      },
+      xhrFields: {
+        withCredentials: true
       }
+
     });
     requestMethod.url = url;
   };
@@ -41,8 +45,8 @@
    * @param params: data
    * @param callback: function(err, result)
    */
-  HttpUtil.post = function(url, params, callback) {
-    if(arguments.length <3) {
+  HttpUtil.post = function (url, params, callback) {
+    if (arguments.length < 3) {
       callback = params;
       params = {};
     }
@@ -50,18 +54,21 @@
     isProcessing = true;
     $.ajax({
       url: url,
-      type: 'post',
+      type: 'POST',
       data: JSON.stringify(params),
       contentType: 'application/json;charset=UTF-8',
       dataType: 'json',
       error: function errorHandler(jqXHR, textStatus, errorThrown) {
-        callback("status : " + jqXHR.status + " msg : " + textStatus );
+        callback("status : " + jqXHR.status + " msg : " + textStatus);
       },
       success: function successHandler(data, status, xhr) {
         callback(null, data);
       },
       complete: function () {
         isProcessing = false;
+      },
+      xhrFields: {
+        withCredentials: true
       }
     })
   };
@@ -73,8 +80,8 @@
    * @param params: data
    * @param callback: function(err, result)
    */
-  HttpUtil.put = function(url, params, callback) {
-    if(arguments.length <3) {
+  HttpUtil.put = function (url, params, callback) {
+    if (arguments.length < 3) {
       callback = params;
       params = {};
     }
@@ -87,13 +94,16 @@
       contentType: 'application/json;charset=UTF-8',
       dataType: 'json',
       error: function errorHandler(jqXHR, textStatus, errorThrown) {
-        callback("status : " + jqXHR.status + " msg : " + textStatus );
+        callback("status : " + jqXHR.status + " msg : " + textStatus);
       },
       success: function successHandler(data, status, xhr) {
         callback(null, data);
       },
       complete: function () {
         isProcessing = false;
+      },
+      xhrFields: {
+        withCredentials: true
       }
     })
   };
@@ -105,8 +115,8 @@
    * @param params: data
    * @param callback: function(err, result)
    */
-  HttpUtil["delete"] = function(url, params, callback) {
-    if(arguments.length < 3) {
+  HttpUtil["delete"] = function (url, params, callback) {
+    if (arguments.length < 3) {
       callback = params;
       params = {};
     }
@@ -119,7 +129,7 @@
       contentType: 'application/json;charset=UTF-8',
       dataType: 'json',
       error: function errorHandler(jqXHR, textStatus, errorThrown) {
-        callback("status : " + jqXHR.status + " msg : " + textStatus );
+        callback("status : " + jqXHR.status + " msg : " + textStatus);
       },
       success: function successHandler(data, status, xhr) {
         callback(null, data);
@@ -130,6 +140,7 @@
     })
   };
 
+  window.HOST_URL = 'http://localhost:5001';
   window.HttpUtil = HttpUtil;
 
 })(window);

@@ -12,6 +12,8 @@
     var self = this;
     self.model = model;
     self.view = view;
+
+
   }
 
   Controller.prototype.setView = function(id) {

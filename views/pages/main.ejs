@@ -11,28 +11,34 @@
     <nav class="navbar navbar-fixed-top main-navbar container-fluid">
         <div class="row">
             <div class="col-xs-2 col-md-2">
-                <img class="nav-left-item nav-image" src="/img/ic_user.png">
+                <a href="/mypage/<%= uid %>">
+                    <img class="nav-left-item nav-image" src="/img/ic_user.png">
+                </a>
             </div>
-            <div class="nav-center-item col-xs-8 col-md-8">
+            <div id="univ_title_container" data-id="<%= univid %>" class="nav-center-item col-xs-8 col-md-8">
                 <div class="center-block">
-                    <p class="nav-title-text text-center">한양대 가림판</p>
+                    <p id="univ_title" class="nav-title-text text-center">가림판</p>
                 </div>
             </div>
             <div class="col-xs-2 col-md-2">
-                <img class="nav-right-item nav-image" src="/img/ic_search.png">
+                <a href="/search">
+                    <img class="nav-right-item nav-image" src="/img/ic_search.png">
+                </a>
             </div>
         </div>
     </nav><!-- /.navbar -->
 
     <div class="center-block write-post-btn-container">
-        <button class="full-width-btn write-post-btn btn">글 쓰기</button>
+        <a href="/write">
+            <button class="full-width-btn write-post-btn btn">글 쓰기</button>
+        </a>
     </div>
 
     <div class="post-container container-fluid">
 
         <div class="sort-btn-container">
-            <div class="sort-new-btn active">NEW</div>
-            <div class="sort-best-btn">BEST</div>
+            <div class="sort-btn sort-new-btn active" data-value="new">NEW</div>
+            <div class="sort-btn sort-best-btn" data-value="hot">BEST</div>
         </div>
         <ul id="post_list_container" class="post-list-container">
             <li class="post-item">

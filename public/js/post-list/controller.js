@@ -3,6 +3,7 @@
 
   var PER_PAGE = 7;
   var pageNum = 1;
+  var sortFilter = 'new';
 
   /**
    * Takes a model and view and acts as the controller between them
@@ -16,6 +17,11 @@
     self.model = model;
     self.view = view;
 
+    self.view.bind('changeTab', function(tabValue) {
+      sortFilter = tabValue;
+      self._updatePostList();
+    });
+
     self.view.bind('movePage', function(pageNumVal) {
       pageNum = pageNumVal;
       self._updatePostList();
@@ -24,12 +30,20 @@
 
   Controller.prototype.setView = function() {
     var self = this;
+    self._updateUnivTitle();
     self._updatePostList();
+  };
+
+  Controller.prototype._updateUnivTitle = function () {
+    var self = this;
+    self.model.getUnivInfo({ univid: $('#univ_title_container').data('id') }, function(data) {
+      self.view.render('redrawTitle', data);
+    });
   };
 
   Controller.prototype._updatePostList = function () {
     var self = this;
-    self.model.getPostList({ page: pageNum, perPage: PER_PAGE }, function(data) {
+    self.model.getPostList({ univid: $('#univ_title_container').data('id'), filter: sortFilter, page: pageNum, perPage: PER_PAGE }, function(data) {
       self.view.render('redraw', data);
     });
   };

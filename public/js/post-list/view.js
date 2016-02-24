@@ -14,6 +14,10 @@
     this.template = template;
   }
 
+  View.prototype._drawUnivTitle = function(parameter) {
+    $('#univ_title').text(parameter);
+  };
+
   View.prototype._clearPostList = function() {
     $('#post_list_container').empty();
   };
@@ -25,6 +29,9 @@
   View.prototype.render = function (viewCmd, parameter) {
     var self = this;
     var viewCommands = {
+      redrawTitle: function() {
+        self._drawUnivTitle(parameter);
+      },
       redraw: function() {
         self._clearPostList();
         self._drawPostList(parameter);
@@ -36,6 +43,14 @@
 
   View.prototype.bind = function (event, handler) {
     var self = this;
+    if (event === 'changeTab') {
+      $('.sort-btn-container .sort-btn').unbind('click').click(function() {
+        $('.sort-btn-container .sort-btn').removeClass('active');
+        $(this).addClass('active');
+        handler($(this).data('value'));
+      });
+    }
+
     if (event === 'movePage') {
       $('#pagination_container > .pagination-number').unbind('click').click(function() {
         $('#pagination_container > .pagination-number').removeClass('active');
