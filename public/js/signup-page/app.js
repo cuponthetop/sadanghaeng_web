@@ -28,17 +28,19 @@
   }
 
   function bind() {
-    $('#signup_btn').click(function() {
-      var user = {
-        email: $('#user_email').val(),
-        password: $('#user_pwd').val()
-      };
-      HttpUtil.post('http://localhost:5001/api/v1/users/register',user,function(err, result) {
-        if (err) {
-          return;
-        }
-        console.log(result);
-      });
+    $('#signup_btn').click(function () {
+      if (validate()) {
+        var user = {
+          email: $('#user_email').val(),
+          password: $('#user_pwd').val()
+        };
+        HttpUtil.post('http://localhost:5001/api/v1/users/register', user, function (err, result) {
+          if (err) {
+            return;
+          }
+          console.log(result);
+        });
+      }
     });
   }
 
