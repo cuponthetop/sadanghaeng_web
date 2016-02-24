@@ -1,6 +1,8 @@
 (function (window) {
   'use strict';
 
+  var univId = '';
+
   /**
    * Takes a model and view and acts as the controller between them
    *
@@ -13,16 +15,27 @@
     self.model = model;
     self.view = view;
 
+    self.view.bind('writeComment', function(parameter) {
+      self._writeComment(parameter);
+    });
   }
 
   Controller.prototype.setView = function(id) {
     var self = this;
-    self._updatePostPage(id);
+    univId = id;
+    self._updatePostPage(univId);
+  };
+
+  Controller.prototype._writeComment = function (parameter) {
+    var self = this;
+    self.model.addCommentData(parameter, function() {
+      self._updatePostPage(univId);
+    });
   };
 
   Controller.prototype._updatePostPage = function (id) {
     var self = this;
-    self.model.getPostData({id: id}, function(data) {
+    self.model.getPostData({pid: id}, function(data) {
       self.view.render('redraw', data);
     });
   };

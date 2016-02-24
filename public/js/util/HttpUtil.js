@@ -53,7 +53,7 @@
     if (isProcessing) return;
     isProcessing = true;
     $.ajax({
-      method: 'POST',
+      type: 'POST',
       url: url,
       data: JSON.stringify(params),
       contentType: 'application/json;charset=UTF-8',
