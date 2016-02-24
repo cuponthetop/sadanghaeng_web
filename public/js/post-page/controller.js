@@ -15,6 +15,7 @@
     self.model = model;
     self.view = view;
 
+
     self.view.bind('writeComment', function(parameter) {
       self._writeComment(parameter);
     });
@@ -24,6 +25,13 @@
     var self = this;
     univId = id;
     self._updatePostPage(univId);
+  };
+
+  Controller.prototype._votePost = function (parameter) {
+    var self = this;
+    self.model.votePost(parameter, function() {
+
+    });
   };
 
   Controller.prototype._writeComment = function (parameter) {
@@ -37,6 +45,10 @@
     var self = this;
     self.model.getPostData({pid: id}, function(data) {
       self.view.render('redraw', data);
+
+      self.view.bind('votePost', function(parameter) {
+        self._votePost(parameter);
+      });
     });
   };
 

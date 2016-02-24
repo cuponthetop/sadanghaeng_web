@@ -44,9 +44,9 @@
       +	'</div>';
 
     this.postInfoTemplate
-      =	'<span class="post-like-label active"></span>'
+      =	'<span class="post-like-label {{isLike}}"></span>'
       + '<span class="post-value post-like">{{likeCount}}</span>'
-      + '<span class="post-dislike-label"></span>'
+      + '<span class="post-dislike-label {{isDislike}}"></span>'
       + '<span class="post-value post-dislike">{{dislikeCount}}</span>'
       + '<div class="comment-info">'
       + '<span class="comment-text">댓글</span>'
@@ -84,6 +84,19 @@
   Template.prototype.showPostInfo = function(data) {
     var view = '';
     var template = this.postInfoTemplate;
+
+    if (data.didVote && (data.didVoteType === 'up' && data.didVoteType === 'down')) {
+      if (data.didVoteType === 'up') {
+        template = template.replace('{{isLike}}', 'active');
+        template = template.replace('{{isDisLike}}', '');
+      } else {
+        template = template.replace('{{isLike}}', '');
+        template = template.replace('{{isDisLike}}', 'active');
+      }
+    } else {
+      template = template.replace('{{isLike}}', '');
+      template = template.replace('{{isDisLike}}', '');
+    }
 
     template = template.replace('{{likeCount}}', data.likeCount);
     template = template.replace('{{dislikeCount}}', data.dislikeCount);
