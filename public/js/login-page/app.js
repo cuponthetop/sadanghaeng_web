@@ -22,7 +22,7 @@
   }
 
   function bind() {
-    HttpUtil.get('http://localhost:5001/api/v1/stats/universities', function (err, result) {
+    HttpUtil.get(HOST_URL + '/api/v1/stats/universities', function (err, result) {
       if (result.status === 0) {
         $('#university_stat').text(result.value.count + "개 학교");
       } else {
@@ -30,7 +30,7 @@
       }
     });
 
-    HttpUtil.get('http://localhost:5001/api/v1/stats/posts', function (err, result) {
+    HttpUtil.get(HOST_URL + '/api/v1/stats/posts', function (err, result) {
       if (result.status === 0) {
         $('#post_stat').text(result.value.count + "개 글");
       } else {
@@ -44,7 +44,7 @@
           email: $('#user_email').val(),
           password: $('#user_pwd').val()
         };
-        HttpUtil.post('http://localhost:5001/api/v1/users/login', user, function (err, result) {
+        HttpUtil.post(HOST_URL + '/api/v1/users/login', user, function (err, result) {
           if (err) {
             console.log(err.msg);
 
