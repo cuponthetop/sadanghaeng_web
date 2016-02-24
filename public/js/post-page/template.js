@@ -35,12 +35,12 @@
       + '</div>'
       + '<div class="info-container">'
       +	  '<span class="post-author">{{author}}</span>'
-      +	  '<span class="post-date">{{postDate}}</span>'
+      +	  '<span class="post-date">{{written}}</span>'
       +	  '<span class="post-label post-view-label">View</span>'
-      +	  '<span class="post-value post-view">{{viewCount}}</span>'
+      +	  '<span class="post-value post-view">{{readCount}}</span>'
       +	'</div>'
       +	'<div class="content-container">'
-      +	  '{{content}}'
+      +	  '{{text}}'
       +	'</div>';
 
     this.postInfoTemplate
@@ -56,9 +56,9 @@
     this.commentTemplate
       =	'<li data-id="{{id}}" class="comment-item">'
       +		'<div class="author">{{author}}</div>'
-      +		'<div class="content">{{content}}</div>'
+      +		'<div class="content">{{text}}</div>'
       +   '<div class="comment-info">'
-      +     '<span class="comment-date">{{writeTime}}</span>'
+      +     '<span class="comment-date">{{written}}</span>'
       +     '<span class="like-text">좋아요</span>'
       +     '<span class="like-label">하트</span>'
       +     '<span class="comment-like">{{likeCount}}</span>'
@@ -72,9 +72,9 @@
 
     template = template.replace('{{title}}', data.title);
     template = template.replace('{{author}}', data.author);
-    template = template.replace('{{postDate}}', data.postDate);
-    template = template.replace('{{viewCount}}', data.viewCount);
-    template = template.replace('{{content}}', data.content);
+    template = template.replace('{{written}}', data.written);
+    template = template.replace('{{readCount}}', data.readCount);
+    template = template.replace('{{text}}', data.text);
 
     view = view + template;
 
@@ -103,8 +103,8 @@
 
       template = template.replace('{{id}}', data[i].cid);
       template = template.replace('{{author}}', escape(data[i].author));
-      template = template.replace('{{content}}', escape(data[i].content));
-      template = template.replace('{{writeTime}}', data[i].writeTime);
+      template = template.replace('{{text}}', escape(data[i].text));
+      template = template.replace('{{written}}', data[i].written);
       template = template.replace('{{likeCount}}', data[i].likeCount);
 
       view = view + template;

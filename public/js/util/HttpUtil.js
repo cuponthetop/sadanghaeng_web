@@ -53,8 +53,8 @@
     if (isProcessing) return;
     isProcessing = true;
     $.ajax({
+      method: 'POST',
       url: url,
-      type: 'POST',
       data: JSON.stringify(params),
       contentType: 'application/json;charset=UTF-8',
       dataType: 'json',
@@ -71,6 +71,12 @@
         withCredentials: true
       }
     })
+  };
+
+  HttpUtil.postMethod = function (url, params, callback) {
+    $.post(url, params, function(data) {
+      callback(data);
+    });
   };
 
   /**
@@ -140,7 +146,7 @@
     })
   };
 
-  window.HOST_URL = 'http://localhost:5001';
+  window.HOST_URL = 'http://192.168.0.17:5001';
   window.HttpUtil = HttpUtil;
 
 })(window);

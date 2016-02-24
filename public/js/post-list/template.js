@@ -36,7 +36,7 @@
       +     '<span class="post-author">{{author}}</span>'
       +     '<span class="post-date">{{written}}</span>'
       +     '<span class="post-label post-view-label">View</span>'
-      +     '<span class="post-value post-view">{{viewCount}}</span>'
+      +     '<span class="post-value post-view">{{readCount}}</span>'
       +     '<span class="post-label post-like-label active"></span>'
       +     '<span class="post-value post-like">{{likeCount}}</span>'
       +     '<span class="post-label post-dislike-label"></span>'
@@ -56,7 +56,7 @@
       template = template.replace('{{title}}', escape(data[i].title));
       template = template.replace('{{author}}', escape(data[i].author));
       template = template.replace('{{written}}', escape(data[i].written));
-      template = template.replace('{{viewCount}}', escape(data[i].viewCount));
+      template = template.replace('{{readCount}}', escape(data[i].readCount));
       template = template.replace('{{likeCount}}', escape(data[i].likeCount));
       template = template.replace('{{dislikeCount}}', escape(data[i].dislikeCount));
 

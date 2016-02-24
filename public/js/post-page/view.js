@@ -22,7 +22,6 @@
     $('#post_info_container').append(this.template.showPostInfo(parameter))
   };
 
-
   View.prototype._drawCommentData = function(parameter) {
     $('#comment_list_container').append(this.template.showComment(parameter))
   };
@@ -41,7 +40,12 @@
   };
 
   View.prototype.bind = function (event, handler) {
-
+    var self = this;
+    if (event === 'writeComment') {
+      $('#comment_write_btn').unbind('click').click(function() {
+        handler({text:$('#comment_write_input').val(), postID: $('#post_container').data('id') });
+      });
+    }
   };
 
   // Export to window
