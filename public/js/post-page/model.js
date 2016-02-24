@@ -11,7 +11,7 @@
   }
 
   Model.prototype.addCommentData = function(parameter, callback) {
-    HttpUtil.postMethod(HOST_URL + '/api/v1/comments', parameter, function (err, result) {
+    HttpUtil.post(HOST_URL + '/api/v1/comments', parameter, function (err, result) {
       if (result.status === 0) {
         callback();
       }

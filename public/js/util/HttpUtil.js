@@ -16,11 +16,11 @@
       callback = params;
       params = null;
     }
-    if (requestMethod.requestUrl == url) {
+    if (requestMethod.requestUrl === url) {
       requestMethod.abort();
     }
     requestMethod = $.ajax({
-      type: 'GET',
+      method: 'GET',
       url: url,
       data: params,
       error: function errorHandler(jqXHR, textStatus, errorThrown) {
@@ -53,7 +53,7 @@
     if (isProcessing) return;
     isProcessing = true;
     $.ajax({
-      type: 'POST',
+      method: 'POST',
       url: url,
       data: JSON.stringify(params),
       contentType: 'application/json;charset=UTF-8',
@@ -73,12 +73,6 @@
     })
   };
 
-  HttpUtil.postMethod = function (url, params, callback) {
-    $.post(url, params, function(data) {
-      callback(data);
-    });
-  };
-
   /**
    * HttpUtil.put
    *
@@ -94,7 +88,7 @@
     if (isProcessing) return;
     isProcessing = true;
     $.ajax({
-      type: 'PUT',
+      method: 'PUT',
       url: url,
       data: JSON.stringify(params),
       contentType: 'application/json;charset=UTF-8',
@@ -129,7 +123,7 @@
     if (isProcessing) return;
     isProcessing = true;
     $.ajax({
-      type: 'DELETE',
+      method: 'DELETE',
       url: url,
       data: JSON.stringify(params),
       contentType: 'application/json;charset=UTF-8',
