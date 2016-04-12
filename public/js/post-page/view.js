@@ -44,7 +44,6 @@
     var pid = $('#post_container').data('id');
     if (event === 'votePost') {
       $('.post-like-label').unbind('click').click(function() {
-        console.log("DDD");
         if ($(this).hasClass('active') || $('.post-dislike-label').hasClass('active')) {
           return alert("이미 투표한 글입니다.");
         }
@@ -63,7 +62,7 @@
 
     if (event === 'writeComment') {
       $('#comment_write_btn').unbind('click').click(function() {
-        handler({text:$('#comment_write_input').val(), postID: pid});
+        handler({text:$('#comment_write_input').val(), pid: pid});
       });
     }
   };
